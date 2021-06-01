@@ -5,6 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
+  names.push("斎藤")
+  p names
 
 end
 
@@ -13,6 +15,8 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
+  array = array1 + array2
+  print array
 
 end
 
@@ -20,14 +24,14 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-
+ p numbers.count(3)
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-
+  sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -37,6 +41,8 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
+  p array1.empty?
+  p array2.empty?
 
 end
 
@@ -44,6 +50,8 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
+  numbers2 = numbers1.map{|n|n*10}
+  p numbers2
 
 end
 
@@ -51,7 +59,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+  p array.map!{|x|x.to_i}
   # 以下は変更しないで下さい
   p array
 end
@@ -60,6 +68,10 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
+  p programming_languages.map(&:capitalize!)
+  
+  p upper_case_programming_languages = programming_languages.map(&:upcase)
+  
 
   # 以下は変更しないで下さい
   p programming_languages
