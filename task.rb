@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.push("斎藤")
+  names << ("斎藤")
   p names
 
 end
@@ -59,7 +59,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  p array.map!{|x|x.to_i}
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -68,9 +68,9 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  p programming_languages.map(&:capitalize!)
+  programming_languages.map(&:capitalize!)
   
-  p upper_case_programming_languages = programming_languages.map(&:upcase)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   
 
   # 以下は変更しないで下さい
