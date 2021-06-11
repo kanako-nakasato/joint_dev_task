@@ -82,13 +82,27 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  names.each.with_index(1) do |name,i|
+  puts "会員No.#{i} #{name}さん" 
+  end
 end
+
+ 
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
+  foods.each.with_index do |food|
+    if food.include?("うに")
+      puts "#{food}:好物です"
+      
+    else
+      puts "#{food}:まぁまぁ好きです"
+    end
+    
+  end
+  
 
 end
 
@@ -96,13 +110,19 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  puts "ユーザーの趣味一覧"
+  sports.flatten!.uniq!.each.with_index(1) do |sport, i|
+   
+    puts "No.#{i} #{sport}"
+  end
+  
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  p data[:user][:name]
 
 end
 
@@ -111,14 +131,17 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  user_data.merge!(update_data)
+  p user_data
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+ data.each do |key_value|
+  p key_value
+ end
 end
 
 def q15
@@ -126,6 +149,10 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+
+puts data1.has_key?(:age)? "OK" : "NG"
+
+puts data2.has_key?(:age)? "OK" : "NG"
 
 end
 
@@ -139,6 +166,9 @@ def q16
 
   # 以下に回答を記載
 
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
 end
 
 class UserQ17
